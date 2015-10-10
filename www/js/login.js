@@ -27,7 +27,7 @@ login.enviar = function(){
         success: function() {
             user = login.entity.user;
             $("#log").html("");
-            $("#main").load("pages/adquirencia.html");
+            loadPage(PAGE_ADQUIRENCIA);
         },
         error: function() {
             $("#log").html("Erro ao logar, tente novamente!");
@@ -50,8 +50,8 @@ login.logout = function(logTxt){
     $("#log").html("");
 
     if(logTxt != undefined){
-	 $("#log").html(logTxt);
+        $("#log").html(logTxt);
     }
 
-    $("#main").load("pages/login.html");
+    loadPage(PAGE_LOGIN);
 }
