@@ -1,31 +1,14 @@
 var adquirencia = {};
-
+adquirencia.formId = "formEstabelecimento";
 adquirencia.entity = {};
 
 adquirencia.enviar = function(){
-
     $("#log").html("");
 
-    adquirencia.entity.nomeEstabelecimento = $("#nome").val();
-    adquirencia.entity.telefone = $("#telefone").val();
-    adquirencia.entity.nomeResponsavel = $("#responsavel").val();
-    adquirencia.entity.concorrentes = [];
-    adquirencia.entity.endereco = "";
-    
-    var concorrentes = $("input[name=concorrentes]:checked");
-    concorrentes.each(function(index) {
-        adquirencia.entity.concorrentes.push($(this).val());
-    });
-    
-    var rua = $("#rua").val();
-    var numero = $("#numero").val();
-    var complemento = $("#complemento").val();
-    var bairro = $("#bairro").val();
-    var cidade = $("#cidade").val();
-    var uf = $("#uf").val();
-    var cep = $("#cep").val();
-    
-    adquirencia.entity.endereco = rua + ", " + numero + ", " + complemento + ", " + bairro + ", " + cidade + ", " + uf + ", " + cep;
+    adquirencia.entity = formValues(adquirencia.formId);
+
+    //passando para string o endereco, pois o request espera esse tipo de dado
+    adquirencia.entity.endereco = JSON.stringify(adquirencia.entity.endereco);
     
     var validMessage = adquirencia.validar();
     
@@ -43,6 +26,7 @@ adquirencia.enviar = function(){
             "user": user
         },
         success: function() {
+            formReset(adquirencia.formId);
             $("#log").html("Enviado com sucesso!");
         },
         error: function(response) {
@@ -55,7 +39,6 @@ adquirencia.enviar = function(){
         
         }
       });
-
 }
 
 adquirencia.validar = function(){

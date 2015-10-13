@@ -1,13 +1,11 @@
 var login = {};
-
+login.formId = "formLogin";
 login.entity = {};
 
 login.enviar = function(){
-
     $("#log").html("");
 
-    login.entity.user = $("#login").val();
-    login.entity.pass = $("#pass").val();
+    login.entity = formValues(login.formId);
     
     var validMessage = login.validar();
     
@@ -21,11 +19,11 @@ login.enviar = function(){
         url: "https://desafioti.redetendencia.com.br/rest/adquirencia/autenticar",
         contentType: "application/json",
         headers: {
-            "user": login.entity.user,
+            "user": login.entity.login,
             "pass": login.entity.pass
         },
         success: function() {
-            user = login.entity.user;
+            user = login.entity.login;
             $("#log").html("");
             loadPage(PAGE_ADQUIRENCIA);
         },
@@ -33,11 +31,10 @@ login.enviar = function(){
             $("#log").html("Erro ao logar, tente novamente!");
         }
       });
-
 }
 
 login.validar = function(){
-     if(login.entity.user == null || login.entity.user == ""){
+     if(login.entity.login == null || login.entity.login == ""){
          return "O campo Login deve ser preenchido!";
      }
      if(login.entity.pass == null || login.entity.pass == ""){
