@@ -13,7 +13,7 @@
         
         <div>
             <label>Telefone: </label>
-            <input id="telefone" name="telefone" type="text" placeholder="Digite o telefone">
+            <input id="telefone" name="telefone" type="text" oninput="mask(this,Telefone);" placeholder="Digite o telefone">
         </div>
         
         <div>
@@ -39,7 +39,7 @@
         
         <div>
             <label>Número: </label>
-            <input id="numero" name="endereco[numero]" type="text" placeholder="Digite o número">
+            <input id="numero" name="endereco[numero]" type="text" oninput="mask(this,Integer);" placeholder="Digite o número">
         </div>
         
         <div>
@@ -64,7 +64,7 @@
         
         <div>
             <label>CEP: </label>
-            <input id="cep" name="endereco[cep]" type="text" placeholder="Digite o CEP">
+            <input id="cep" name="endereco[cep]" oninput="mask(this,Cep);" type="text" placeholder="Digite o CEP">
         </div>
 
     </form>
