@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-project-lite/sample.zip",
       "projectGuid": "b0c7d2e5-2940-4779-908e-7fa4e49bd123",
-      "lastModifiedDate": 1444690587090,
+      "lastModifiedDate": 1444792758536,
       "creationDate": 1444182797550
     },
     "XDK-app-designer": "false",
@@ -54,20 +54,21 @@
       },
       {
         "id": "cordova-plugin-splashscreen",
+        "name": "Splashscreen",
         "version": "2.1.0",
-        "selectedState": "Included",
-        "data": {},
-        "paramvals": {},
-        "dependsOn": [],
-        "dependedBy": [],
         "originType": "cordova.io",
         "origin": "cordova-plugin-splashscreen",
-        "permissions": {},
-        "topLevel": true,
         "gitref": "",
-        "name": "Splashscreen",
+        "paramvals": {},
+        "sourceLocation": "plugins/cordova-plugin-splashscreen",
+        "selectedState": "Included",
+        "checksum": "170efb68",
+        "dependsOn": [],
+        "topLevel": true,
+        "permissions": {},
         "description": "Cordova Splashscreen Plugin",
-        "checksum": "170efb68"
+        "data": {},
+        "dependedBy": []
       }
     ],
     "buildConfigurations": {
@@ -80,7 +81,7 @@
           "android-targetSdkVersion": "19",
           "android-installLocation": "auto"
         },
-        "isActive_": true,
+        "isActive_": false,
         "appName_": "Adquirência",
         "appID_": "com.jva.adquirencia",
         "appAccess_": {
@@ -125,25 +126,25 @@
         },
         "icons_": [
           {
-            "relPath": "images/36x36.png",
+            "relPath": "img/36x36.png",
             "density": "ldpi",
             "height": 36,
             "width": 36
           },
           {
-            "relPath": "images/48x48.png",
+            "relPath": "img/48x48.png",
             "density": "mdpi",
             "height": 48,
             "width": 48
           },
           {
-            "relPath": "images/72x72.png",
+            "relPath": "img/72x72.png",
             "density": "hdpi",
             "height": 72,
             "width": 72
           },
           {
-            "relPath": "images/96x96.png",
+            "relPath": "img/96x96.png",
             "density": "xhdpi",
             "height": 96,
             "width": 96
@@ -151,28 +152,28 @@
         ],
         "splashes_": [
           {
-            "relPath": "images/320x426.png",
+            "relPath": "img/320x426.png",
             "density": "ldpi",
             "height": 426,
             "width": 320,
             "orientation": "portrait"
           },
           {
-            "relPath": "images/320x470.png",
+            "relPath": "img/320x470.png",
             "density": "mdpi",
             "height": 470,
             "width": 320,
             "orientation": "portrait"
           },
           {
-            "relPath": "images/480x640.png",
+            "relPath": "img/480x640.png",
             "density": "hdpi",
             "height": 640,
             "width": 480,
             "orientation": "portrait"
           },
           {
-            "relPath": "images/720x960.png",
+            "relPath": "img/720x960.png",
             "density": "xhdpi",
             "height": 960,
             "width": 720,
@@ -196,7 +197,7 @@
           "ios-target": "6",
           "ios-configuration": "adhoc"
         },
-        "isActive_": true,
+        "isActive_": false,
         "appName_": "Adquirencia",
         "appID_": "xdk.intel.cordova.template.lite",
         "appAccess_": {
@@ -232,7 +233,7 @@
           "windows-publisher-display-name": "",
           "windows-publisher-id": ""
         },
-        "isActive_": true,
+        "isActive_": false,
         "appName_": "Adquirencia",
         "appID_": "xdk.intel.cordova.template.lite",
         "appAccess_": {

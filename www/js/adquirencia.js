@@ -3,7 +3,7 @@ adquirencia.formId = "formEstabelecimento";
 adquirencia.entity = {};
 
 adquirencia.enviar = function(){
-    $("#log").html("");
+    logClear();
 
     adquirencia.entity = formValues(adquirencia.formId);
 
@@ -13,7 +13,7 @@ adquirencia.enviar = function(){
     var validMessage = adquirencia.validar();
     
     if(validMessage != null && validMessage != ""){
-        $("#log").html(validMessage);
+        log(validMessage);
         return;
     }
 
@@ -27,14 +27,14 @@ adquirencia.enviar = function(){
         },
         success: function() {
             formReset(adquirencia.formId);
-            $("#log").html("Enviado com sucesso!");
+            log("Enviado com sucesso!");
         },
         error: function(response) {
             
             if(response.status == 401){
                 login.logout("Sem autorização, efetue login no sistema!");
             }else{
-                $("#log").html("Erro ao enviar, tente novamente!");
+                log("Erro ao enviar, tente novamente!");
             }
         
         }

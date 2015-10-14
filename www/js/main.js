@@ -18,12 +18,20 @@ var formReset = function(formId){
     $("#"+formId)[0].reset();
 }
 
+var log = function(message){
+    $("#log").html(message);
+}
+
+var logClear = function(){
+    log("");
+}
+
 $(document).ready(function() {
-    $("#log").html("");
+    logClear();
     
-     if(user == null){
-         loadPage(PAGE_LOGIN);
-     }else{
-         loadPage(PAGE_ADQUIRENCIA);
-     }
+    if(user == null){
+        loadPage(PAGE_LOGIN);
+    }else{
+        loadPage(PAGE_ADQUIRENCIA);
+    }
 });

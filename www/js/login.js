@@ -3,14 +3,14 @@ login.formId = "formLogin";
 login.entity = {};
 
 login.enviar = function(){
-    $("#log").html("");
+    logClear();
 
     login.entity = formValues(login.formId);
     
     var validMessage = login.validar();
     
     if(validMessage != null && validMessage != ""){
-        $("#log").html(validMessage);
+        log(validMessage);
         return;
     }
 
@@ -24,11 +24,11 @@ login.enviar = function(){
         },
         success: function() {
             user = login.entity.login;
-            $("#log").html("");
+            logClear();
             loadPage(PAGE_ADQUIRENCIA);
         },
         error: function() {
-            $("#log").html("Erro ao logar, tente novamente!");
+            log("Erro ao logar, tente novamente!");
         }
       });
 }
@@ -44,10 +44,10 @@ login.validar = function(){
 
 login.logout = function(logTxt){
     user = null;
-    $("#log").html("");
+    logClear();
 
     if(logTxt != undefined){
-        $("#log").html(logTxt);
+        log(logTxt);
     }
 
     loadPage(PAGE_LOGIN);
