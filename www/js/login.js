@@ -10,7 +10,7 @@ login.enviar = function(){
     var validMessage = login.validar();
     
     if(validMessage != null && validMessage != ""){
-        log(validMessage);
+        log(validMessage, "error");
         return;
     }
 
@@ -28,7 +28,7 @@ login.enviar = function(){
             loadPage(PAGE_ADQUIRENCIA);
         },
         error: function() {
-            log("Erro ao logar, tente novamente!");
+            log("Erro ao logar, tente novamente!", "error");
         }
       });
 }
@@ -47,7 +47,7 @@ login.logout = function(logTxt){
     logClear();
 
     if(logTxt != undefined){
-        log(logTxt);
+        log(logTxt, "error");
     }
 
     loadPage(PAGE_LOGIN);

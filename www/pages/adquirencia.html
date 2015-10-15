@@ -1,74 +1,113 @@
 <div class="adquirencia-content">
-    
-    <button onclick="login.logout()" id="btn_login">X</button>
-    
-    <div>Estabelecimento</div>
-    
-    <form id="formEstabelecimento">
 
-        <div>
-            <label>Nome: </label>
-            <input id="nome" name="nomeEstabelecimento" type="text" placeholder="Digite o nome">
-        </div>
-        
-        <div>
-            <label>Telefone: </label>
-            <input id="telefone" name="telefone" type="tel" oninput="mask(this,Telefone);" placeholder="Digite o telefone">
-        </div>
-        
-        <div>
-            <label>Responsável: </label>
-            <input id="responsavel" name="nomeResponsavel" type="text" placeholder="Digite o responsável">
-        </div>
-        
-        <div id="concorrentes">
-            <label>Concorrentes: </label>
-            <input id="visa" name="concorrentes[]" type="checkbox" value="Visa">Visa
-            <input id="cielo" name="concorrentes[]" type="checkbox" value="Cielo">Cielo
-            <input id="santGetnet" name="concorrentes[]" type="checkbox" value="Santander Getnet">Santander Getnet
-            <input id="elavon" name="concorrentes[]" type="checkbox" value="Elavon">Elavon
-            <input id="global" name="concorrentes[]" type="checkbox" value="Global">Global
-        </div>
-        
-        <div>Endereço</div>
-        
-        <div>
-            <label>Rua: </label>
-            <input id="rua" name="endereco[rua]" type="text" placeholder="Digite a rua">
-        </div>
-        
-        <div>
-            <label>Número: </label>
-            <input id="numero" name="endereco[numero]" type="number" oninput="mask(this,Integer);" placeholder="Digite o número">
-        </div>
-        
-        <div>
-            <label>Complemento: </label>
-            <input id="complemento" name="endereco[complemento]" type="text" placeholder="Digite o complemento">
-        </div>
-        
-        <div>
-            <label>Bairro: </label>
-            <input id="bairro" name="endereco[bairro]" type="text" placeholder="Digite o bairro">
-        </div>
-        
-        <div>
-            <label>Cidade: </label>
-            <input id="cidade" name="endereco[cidade]" type="text" placeholder="Digite a cidade">
-        </div>
-        
-        <div>
-            <label>UF: </label>
-            <input id="uf" name="endereco[uf]" type="text" placeholder="Digite a UF">
-        </div>
-        
-        <div>
-            <label>CEP: </label>
-            <input id="cep" name="endereco[cep]" oninput="mask(this,Cep);" type="tel" placeholder="Digite o CEP">
-        </div>
+	<div class="bar bar-header bar-light">
+		<h1 class="title">Estabelecimento</h1>
+		<button class="button button-assertive" onclick="login.logout()">X</button>
+	</div>
+	    
+	<div class="content">
+		<form id="formEstabelecimento">
+			<div class="list">
+				<label class="item item-input item-stacked-label">
+				    <span class="input-label">Nome</span>
+				    <input id="nome" name="nomeEstabelecimento" type="text" placeholder="Digite o nome">
+				</label>
 
-    </form>
-    
-    <button onclick="adquirencia.enviar()" id="btn_login">Enviar</button>
+				<label class="item item-input item-stacked-label">
+				    <span class="input-label">Telefone</span>
+				    <input id="telefone" name="telefone" type="tel" oninput="mask(this,Telefone);" placeholder="Digite o telefone">
+				</label>
+
+				<label class="item item-input item-stacked-label">
+				    <span class="input-label">Responsável</span>
+				    <input id="responsavel" name="nomeResponsavel" type="text" placeholder="Digite o responsável">
+				</label>
+
+				<label class="item">
+				    <span class="input-label">Concorrentes</span>
+					<ul class="list">
+					  <li class="item item-checkbox">
+					     <label class="checkbox">
+					       <input type="checkbox" name="concorrentes[]" value="Visa">
+					     </label>
+					     <span>Visa</span>
+					  </li>
+
+					  <li class="item item-checkbox">
+					     <label class="checkbox">
+					       <input type="checkbox" name="concorrentes[]" value="Cielo">
+					     </label>
+					     <span>Cielo</span>
+					  </li>
+
+					  <li class="item item-checkbox">
+					     <label class="checkbox">
+					       <input type="checkbox" name="concorrentes[]" value="Santander Getnet">
+					     </label>
+					     <span>Santander Getnet</span>
+					  </li>
+
+					  <li class="item item-checkbox">
+					     <label class="checkbox">
+					       <input type="checkbox" name="concorrentes[]" value="Elavon">
+					     </label>
+					     <span>Elavon</span>
+					  </li>
+
+					  <li class="item item-checkbox">
+					     <label class="checkbox">
+					       <input type="checkbox" name="concorrentes[]" value="Global">
+					     </label>
+					     <span>Global</span>
+					  </li>
+					</ul>
+				</label>
+
+				<label class="item">
+				    <span class="input-label">Endereço</span>
+                    
+                     <label class="item item-input item-stacked-label">
+					    <span class="input-label">CEP</span>
+					    <input id="cep" name="endereco[cep]" oninput="mask(this,Cep);" type="tel" placeholder="Digite o CEP">
+					</label>
+
+					 <label class="item item-input item-stacked-label">
+					    <span class="input-label">Rua</span>
+					    <input id="rua" name="endereco[rua]" type="text" placeholder="Digite a rua">
+					</label>
+
+					 <label class="item item-input item-stacked-label">
+					    <span class="input-label">Número</span>
+					    <input id="numero" name="endereco[numero]" type="number" oninput="mask(this,Integer);" placeholder="Digite o número">
+					</label>
+
+					 <label class="item item-input item-stacked-label">
+					    <span class="input-label">Complemento</span>
+					    <input id="complemento" name="endereco[complemento]" type="text" placeholder="Digite o complemento">
+					</label>
+
+					 <label class="item item-input item-stacked-label">
+					    <span class="input-label">Bairro</span>
+					    <input id="bairro" name="endereco[bairro]" type="text" placeholder="Digite o bairro">
+					</label>
+
+					 <label class="item item-input item-stacked-label">
+					    <span class="input-label">Cidade</span>
+					    <input id="cidade" name="endereco[cidade]" type="text" placeholder="Digite a cidade">
+					</label>
+
+					 <label class="item item-input item-stacked-label">
+					    <span class="input-label">UF</span>
+					    <input id="uf" name="endereco[uf]" type="text" placeholder="Digite a UF">
+					</label>
+				</label>
+			</div>
+		</form>
+
+		<div class="padding btnEnviar">
+			<button class="button button-block button-balanced" onclick="adquirencia.enviar()" id="btn_login">Enviar</button>
+		</div>
+	</div>
 </div>
+
    

@@ -18,13 +18,36 @@ var formReset = function(formId){
     $("#"+formId)[0].reset();
 }
 
-var log = function(message){
+var goTopPage = function(){
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+}
+
+var log = function(message, type){
+    $("#log").removeClass();
+    
+    if(type != undefined){
+        $("#log").addClass(type);
+    }
+    
     $("#log").html(message);
+    
+    $("#log").addClass("show");
+    
+    goTopPage();
 }
 
 var logClear = function(){
     log("");
+    $("#log").addClass("hide");
 }
+
+$( document ).ajaxStart(function() {
+    $("#loading").removeClass("hide");
+});
+
+$( document ).ajaxComplete(function() {
+    $("#loading").addClass("hide");
+});
 
 $(document).ready(function() {
     logClear();

@@ -3,7 +3,7 @@
 <head>
     <title>Adquirência</title>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     
     <link href="css/ionic.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -13,11 +13,13 @@
     <script src="xdk/init-dev.js"></script>
 </head>
 
-<body>
-
-    <div id="log"></div>
+<body class="ionic-body">
+    
+    <div id="log" class="hide"></div>
     
     <div id="main"></div>
+    
+    <div id="loading" class="hide"></div>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.serialize-object.min.js"></script>

@@ -13,7 +13,7 @@ adquirencia.enviar = function(){
     var validMessage = adquirencia.validar();
     
     if(validMessage != null && validMessage != ""){
-        log(validMessage);
+        log(validMessage, "error");
         return;
     }
 
@@ -27,14 +27,14 @@ adquirencia.enviar = function(){
         },
         success: function() {
             formReset(adquirencia.formId);
-            log("Enviado com sucesso!");
+            log("Enviado com sucesso!", "success");
         },
         error: function(response) {
             
             if(response.status == 401){
-                login.logout("Sem autorização, efetue login no sistema!");
+                login.logout("Sem autorização, efetue login no sistema!", "error");
             }else{
-                log("Erro ao enviar, tente novamente!");
+                log("Erro ao enviar, tente novamente!", "error");
             }
         
         }
