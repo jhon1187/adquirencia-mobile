@@ -41,6 +41,14 @@ var logClear = function(){
     $("#log").addClass("hide");
 }
 
+var removeMarkValidate = function(){
+    $("form span").css("color","#444");
+}
+
+var markValidate = function(inputId){
+    $("#"+inputId).parent().children("span").css("color","#f44336");
+}
+         
 $( document ).ajaxStart(function() {
     $("#loading").removeClass("hide");
 });

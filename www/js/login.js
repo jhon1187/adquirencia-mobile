@@ -4,6 +4,7 @@ login.entity = {};
 
 login.enviar = function(){
     logClear();
+    removeMarkValidate();
 
     login.entity = formValues(login.formId);
     
@@ -35,9 +36,11 @@ login.enviar = function(){
 
 login.validar = function(){
      if(login.entity.login == null || login.entity.login == ""){
+         markValidate("login");
          return "O campo Login deve ser preenchido!";
      }
      if(login.entity.pass == null || login.entity.pass == ""){
+         markValidate("pass");
          return "O campo Senha deve ser preenchido!";
      }
 }
