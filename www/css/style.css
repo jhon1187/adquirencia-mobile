@@ -45,9 +45,11 @@
     position: fixed;
 }
 
-/*.bar-header{
+/*
+.bar-header{
    position: inherit;
-}*/
+}
+*/
 
 .clear{
     clear: both;
