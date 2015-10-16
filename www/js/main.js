@@ -34,12 +34,27 @@ var enterNextFocus = function(){
     });
 }
 
+
+var focusInputEvent = function(){
+    $("input[type=text],input[type=number],input[type=tel]").focusin(function() {
+      $(".bar-footer").addClass("hide");
+    });
+    
+    $("input[type=text],input[type=number],input[type=tel]").focusout(function() {
+      $(".bar-footer").removeClass("hide");
+    });
+}
+
+var loadCallBack = function(){
+    enterNextFocus();
+}
+
 var loadPage = function(page){
     var pageHtml = ("pages/"+page+".html");
     var pageJs = ("js/"+page+".js");
     var pageCss = ("css/"+page+".css");
     
-    $("#main").load(pageHtml, enterNextFocus);
+    $("#main").load(pageHtml, loadCallBack);
     
     $.getScript(pageJs);
 }
