@@ -42,9 +42,7 @@ adquirencia.enviar = function(){
       });
 }
 
-adquirencia.validar = function(){
-    console.info(adquirencia.entity);
-    
+adquirencia.validar = function(){    
     if(adquirencia.entity.nomeEstabelecimento == null || adquirencia.entity.nomeEstabelecimento == ""){
          markValidate("nome");
          return "O campo Nome deve ser preenchido!";
