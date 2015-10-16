@@ -68,6 +68,15 @@
     cursor: pointer;
 }
 
+.item-toggle{
+    border-bottom: none;
+}
+
+.border-bottom{
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1px;
+}
+
 /*-------------------------------LOGIN--------------------------------*/
 
 .login-content .btnEntrar{

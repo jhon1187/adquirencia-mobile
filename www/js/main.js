@@ -48,6 +48,18 @@ var removeMarkValidate = function(){
 var markValidate = function(inputId){
     $("#"+inputId).parent().children("span").css("color","#f44336");
 }
+
+var toggle = function(id){
+    if($("#"+id).hasClass("hide")){
+        $("#"+id).removeClass("hide");
+    }else{
+        $("#"+id).addClass("hide");
+    }
+}
+
+var hide = function(id){
+    $("#"+id).addClass("hide");
+}
          
 $( document ).ajaxStart(function() {
     $("#loading").removeClass("hide");

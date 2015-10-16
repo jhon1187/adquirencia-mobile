@@ -7,7 +7,7 @@
 	    
 	<div class="content has-header has-footer">
         
-        <div id="log" class="hide"></div>
+        <div id="log" class="hide" onclick="hide('log')"></div>
         
 		<form id="formEstabelecimento">
 			<div class="list">
@@ -26,84 +26,104 @@
 				    <input id="responsavel" name="nomeResponsavel" type="text" placeholder="Digite o responsável">
 				</label>
 
-				<label class="item">
-				    <span class="input-label">Concorrentes</span>
-					<ul class="list">
-					  <li class="item item-checkbox">
-					     <label class="checkbox">
-					       <input type="checkbox" name="concorrentes[]" value="Visa">
-					     </label>
-					     <span>Visa</span>
-					  </li>
+                <div class="border-bottom">
+                    <div class="item item-toggle">
+                         Concorrentes
+                         <label class="toggle toggle-calm">
+                           <input type="checkbox" onclick="toggle('concorrentes')">
+                           <div class="track">
+                             <div class="handle"></div>
+                           </div>
+                         </label>
+                    </div>
 
-					  <li class="item item-checkbox">
-					     <label class="checkbox">
-					       <input type="checkbox" name="concorrentes[]" value="Cielo">
-					     </label>
-					     <span>Cielo</span>
-					  </li>
+                    <ul id="concorrentes" class="list padding hide">
+                      <li class="item item-checkbox">
+                         <label class="checkbox">
+                           <input type="checkbox" name="concorrentes[]" value="Visa">
+                         </label>
+                         <span>Visa</span>
+                      </li>
 
-					  <li class="item item-checkbox">
-					     <label class="checkbox">
-					       <input type="checkbox" name="concorrentes[]" value="Santander Getnet">
-					     </label>
-					     <span>Santander Getnet</span>
-					  </li>
+                      <li class="item item-checkbox">
+                         <label class="checkbox">
+                           <input type="checkbox" name="concorrentes[]" value="Cielo">
+                         </label>
+                         <span>Cielo</span>
+                      </li>
 
-					  <li class="item item-checkbox">
-					     <label class="checkbox">
-					       <input type="checkbox" name="concorrentes[]" value="Elavon">
-					     </label>
-					     <span>Elavon</span>
-					  </li>
+                      <li class="item item-checkbox">
+                         <label class="checkbox">
+                           <input type="checkbox" name="concorrentes[]" value="Santander Getnet">
+                         </label>
+                         <span>Santander Getnet</span>
+                      </li>
 
-					  <li class="item item-checkbox">
-					     <label class="checkbox">
-					       <input type="checkbox" name="concorrentes[]" value="Global">
-					     </label>
-					     <span>Global</span>
-					  </li>
-					</ul>
-				</label>
+                      <li class="item item-checkbox">
+                         <label class="checkbox">
+                           <input type="checkbox" name="concorrentes[]" value="Elavon">
+                         </label>
+                         <span>Elavon</span>
+                      </li>
 
-				<label class="item">
-				    <span class="input-label">Endereço</span>
+                      <li class="item item-checkbox">
+                         <label class="checkbox">
+                           <input type="checkbox" name="concorrentes[]" value="Global">
+                         </label>
+                         <span>Global</span>
+                      </li>
+                    </ul>
+                </div>
+
+				<div class="border-bottom">
+                    <div class="item item-toggle">
+                         Endereço
+                         <label class="toggle toggle-calm">
+                           <input type="checkbox" onclick="toggle('endereco')">
+                           <div class="track">
+                             <div class="handle"></div>
+                           </div>
+                         </label>
+                    </div>
                     
-                     <label class="item item-input item-stacked-label">
-					    <span class="input-label">CEP</span>
-					    <input id="cep" name="endereco[cep]" oninput="mask(this,Cep);" type="tel" placeholder="Digite o CEP">
-					</label>
+                    <div id="endereco" class="padding hide">
+                         <label class="item item-input item-stacked-label">
+                            <span class="input-label">CEP</span>
+                            <input id="cep" name="endereco[cep]" oninput="mask(this,Cep);" type="tel" placeholder="Digite o CEP">
+                        </label>
 
-					 <label class="item item-input item-stacked-label">
-					    <span class="input-label">Rua</span>
-					    <input id="rua" name="endereco[rua]" type="text" placeholder="Digite a rua">
-					</label>
+                         <label class="item item-input item-stacked-label">
+                            <span class="input-label">Rua</span>
+                            <input id="rua" name="endereco[rua]" type="text" placeholder="Digite a rua">
+                        </label>
 
-					 <label class="item item-input item-stacked-label">
-					    <span class="input-label">Número</span>
-					    <input id="numero" name="endereco[numero]" type="number" oninput="mask(this,Integer);" placeholder="Digite o número">
-					</label>
+                         <label class="item item-input item-stacked-label">
+                            <span class="input-label">Número</span>
+                            <input id="numero" name="endereco[numero]" type="number" oninput="mask(this,Integer);" placeholder="Digite o número">
+                        </label>
 
-					 <label class="item item-input item-stacked-label">
-					    <span class="input-label">Complemento</span>
-					    <input id="complemento" name="endereco[complemento]" type="text" placeholder="Digite o complemento">
-					</label>
+                         <label class="item item-input item-stacked-label">
+                            <span class="input-label">Complemento</span>
+                            <input id="complemento" name="endereco[complemento]" type="text" placeholder="Digite o complemento">
+                        </label>
 
-					 <label class="item item-input item-stacked-label">
-					    <span class="input-label">Bairro</span>
-					    <input id="bairro" name="endereco[bairro]" type="text" placeholder="Digite o bairro">
-					</label>
+                         <label class="item item-input item-stacked-label">
+                            <span class="input-label">Bairro</span>
+                            <input id="bairro" name="endereco[bairro]" type="text" placeholder="Digite o bairro">
+                        </label>
 
-					 <label class="item item-input item-stacked-label">
-					    <span class="input-label">Cidade</span>
-					    <input id="cidade" name="endereco[cidade]" type="text" placeholder="Digite a cidade">
-					</label>
+                         <label class="item item-input item-stacked-label">
+                            <span class="input-label">Cidade</span>
+                            <input id="cidade" name="endereco[cidade]" type="text" placeholder="Digite a cidade">
+                        </label>
 
-					 <label class="item item-input item-stacked-label">
-					    <span class="input-label">UF</span>
-					    <input id="uf" name="endereco[uf]" type="text" placeholder="Digite a UF">
-					</label>
-				</label>
+                         <label class="item item-input item-stacked-label">
+                            <span class="input-label">UF</span>
+                            <input id="uf" name="endereco[uf]" type="text" placeholder="Digite a UF">
+                        </label>
+                    </div>
+				</div>
+                
 			</div>
 		</form>
 	</div>
