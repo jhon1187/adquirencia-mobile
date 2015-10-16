@@ -5,7 +5,10 @@
 		<button class="button button-assertive" onclick="login.logout()">X</button>
 	</div>
 	    
-	<div class="content">
+	<div class="content has-header has-footer">
+        
+        <div id="log" class="hide"></div>
+        
 		<form id="formEstabelecimento">
 			<div class="list">
 				<label class="item item-input item-stacked-label">
@@ -103,11 +106,11 @@
 				</label>
 			</div>
 		</form>
-
-		<div class="padding btnEnviar">
-			<button class="button button-block button-balanced" onclick="adquirencia.enviar()" id="btn_login">Enviar</button>
-		</div>
 	</div>
+    
+    <div class="bar bar-footer bar-balanced">
+        <div class="title pointer" onclick="adquirencia.enviar()">Enviar</div>
+    </div>
 </div>
 
    
