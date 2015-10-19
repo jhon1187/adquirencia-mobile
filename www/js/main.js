@@ -121,6 +121,10 @@ $( document ).ajaxComplete(function() {
 $(document).ready(function() {
     logClear();
     
+    window.addEventListener('native.keyboardshow', function(){
+        document.body.classList.add('keyboard-open');
+    });
+
     if(user == null){
         loadPage(PAGE_LOGIN);
     }else{
