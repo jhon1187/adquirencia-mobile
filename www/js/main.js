@@ -1,7 +1,6 @@
 var user = null;
 
 var enterNextFocus = function(){
-    
     /* ao pressionar uma tecla em um campo que seja de class="pula" */
     $("input").keypress(function(e){
         /* 
@@ -30,10 +29,8 @@ var enterNextFocus = function(){
           e.preventDefault(e);
           return false;
        }
-        
     });
 }
-
 
 var focusInputEvent = function(){
     $("input[type=text],input[type=number],input[type=tel]").focusin(function() {
