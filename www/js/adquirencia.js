@@ -28,6 +28,10 @@ adquirencia.enviar = function(){
         },
         success: function() {
             formReset(adquirencia.formId);
+            
+            toggle("endereco");
+            toggle("concorrentes");
+            
             log("Enviado com sucesso!", "success");
         },
         error: function(response) {
