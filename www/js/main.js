@@ -1,5 +1,9 @@
 var user = null;
 
+var pageHtml = null;
+var pageJs = null;
+var pageCss = null;
+
 var enterNextFocus = function(){
     
     //$("input[autofocus]:visible:enabled:eq(0)").focus();
@@ -45,17 +49,17 @@ var focusInputEvent = function(){
     });
 }
 
-var loadCallBack = function(pageJs){
-    $.getScript(pageJs);
+var loadCallBack = function(){  
     enterNextFocus();
+    $.getScript(pageJs);
 }
 
 var loadPage = function(page){
-    var pageHtml = ("pages/"+page+".html");
-    var pageJs = ("js/"+page+".js");
-    var pageCss = ("css/"+page+".css");
+    pageHtml = ("pages/"+page+".html");
+    pageJs = ("js/"+page+".js");
+    pageCss = ("css/"+page+".css");
     
-    $("#main").load(pageHtml, loadCallBack(pageJs));
+    $("#main").load(pageHtml, loadCallBack);
 }
 
 var formValues = function(formId){
