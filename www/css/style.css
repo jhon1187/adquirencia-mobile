@@ -23,7 +23,7 @@
 #log{
     text-align: center;
     font-size: 12px;
-    padding-bottom: 5px;
+    padding: 3px;
     color: #fff;
     font-weight: bold;
     margin: 15px 0px 15px 0px;
@@ -45,29 +45,39 @@
     position: fixed;
 }
 
-/*
 .bar-header{
    position: inherit;
 }
-*/
 
 .clear{
     clear: both;
 }
 
-.bar-header .icon::before, .bar-header .icon::after{
-    font-size: 24px !important;
-    color: #f44336;
+.bar-header {
+    height: 46px !important;
 }
 
 .has-header {
-    top: 0px;
-    margin-top: 44px;
+    top: 0px !important;
+    margin-top: 46px !important;
+}
+
+.bar-footer{
+    height: 44px !important;
 }
 
 .has-footer {
-    bottom: 0px;
-    margin-bottom: 44px;
+    bottom: 0px !important;
+    margin-bottom: 44px !important;
+}
+
+.bar-header>*, .bar-footer>* {
+    margin: 0px !important;
+}
+
+.bar-header .icon::before, .bar-header .icon::after{
+    font-size: 24px !important;
+    color: #ffffff;
 }
 
 .pointer{
@@ -81,6 +91,35 @@
 .border-bottom{
     border-bottom: 1px solid #ddd;
     padding-bottom: 1px;
+}
+
+.item-accordion .icon{
+    margin-right: 8px;
+    font-size: 18px !important;
+}
+
+.item-accordion h2{
+    margin-top: -22px;
+    text-align: center;
+}
+
+.bar h1 {
+    color: #ffffff !important;
+}
+
+.bar-calm, button-calm{
+    background-color: #03a9f4 !important;
+    border-color: #03a9f4 !important;
+}
+
+.bar-tend, .button-tend{
+    background-color: #009688 !important;
+    border-color: #009688 !important;
+}
+
+.bar-balanced, .button-balanced{
+    background-color: #8bc34a !important;
+    border-color: #8bc34a !important;
 }
 
 /*-------------------------------LOGIN--------------------------------*/

@@ -1,6 +1,9 @@
 var user = null;
 
 var enterNextFocus = function(){
+    
+    $("input[autofocus]:visible:enabled:eq(0)").focus();
+    
     /* ao pressionar uma tecla em um campo que seja de class="pula" */
     $("input").keypress(function(e){
         /* 
@@ -12,7 +15,7 @@ var enterNextFocus = function(){
        /* verifica se a tecla pressionada foi o ENTER */
        if(tecla == 13){
            /* guarda o seletor do campo que foi pressionado Enter */
-           campo =  $('input');
+           campo = $('input');
            /* pega o indice do elemento*/
            indice = campo.index(this);
            /*soma mais um ao indice e verifica se não é null
@@ -42,7 +45,8 @@ var focusInputEvent = function(){
     });
 }
 
-var loadCallBack = function(){
+var loadCallBack = function(pageJs){
+    $.getScript(pageJs);
     enterNextFocus();
 }
 
@@ -51,9 +55,7 @@ var loadPage = function(page){
     var pageJs = ("js/"+page+".js");
     var pageCss = ("css/"+page+".css");
     
-    $("#main").load(pageHtml, loadCallBack);
-    
-    $.getScript(pageJs);
+    $("#main").load(pageHtml, loadCallBack(pageJs));
 }
 
 var formValues = function(formId){
@@ -95,16 +97,27 @@ var markValidate = function(inputId){
     $("#"+inputId).parent().children("span").css("color","#f44336");
 }
 
-var toggle = function(id){
+var accordion = function(id){
+    
+    if($("#"+ id +" .icon").hasClass("ion-ios-arrow-right")){
+        $("#"+ id +" .icon").removeClass("ion-ios-arrow-right");
+        $("#"+ id +" .icon").addClass("ion-ios-arrow-down");
+    }else{
+        $("#"+ id +" .icon").removeClass("ion-ios-arrow-down");
+        $("#"+ id +" .icon").addClass("ion-ios-arrow-right");
+    }
+    
+    var idContent = id + "Content";
+    
+    hideShow(idContent);
+}
+
+var hideShow = function(id){
     if($("#"+id).hasClass("hide")){
         $("#"+id).removeClass("hide");
     }else{
         $("#"+id).addClass("hide");
     }
-}
-
-var hide = function(id){
-    $("#"+id).addClass("hide");
 }
          
 $( document ).ajaxStart(function() {

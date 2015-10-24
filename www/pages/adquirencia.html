@@ -1,11 +1,11 @@
 <div class="adquirencia-content">
 
-	<div class="bar bar-header bar-light">
+	<div class="bar bar-header bar-tend">
 		<h1 class="title">Estabelecimento</h1>
-        <button class="button button-icon icon ion-close-round" onclick="login.logout()"></button>
+        <button class="button button-icon icon ion-android-more-vertical" onclick="login.logout()"></button>
 	</div>
 	    
-	<div class="content has-header has-footer">
+	<div class="content has-footer">
         
         <div id="log" class="hide" onclick="hide('log')"></div>
         
@@ -26,67 +26,59 @@
 				    <input id="responsavel" name="nomeResponsavel" type="text" placeholder="Digite o responsável">
 				</label>
 
-                <div class="border-bottom">
-                    <div class="item item-toggle">
-                         Concorrentes
-                         <label class="toggle toggle-calm">
-                           <input type="checkbox" onclick="toggle('concorrentes')">
-                           <div class="track">
-                             <div class="handle"></div>
-                           </div>
-                         </label>
-                    </div>
-
-                    <ul id="concorrentes" class="list padding hide">
-                      <li class="item item-checkbox">
-                         <label class="checkbox">
-                           <input type="checkbox" name="concorrentes[]" value="Visa">
-                         </label>
-                         <span>Visa</span>
-                      </li>
-
-                      <li class="item item-checkbox">
-                         <label class="checkbox">
-                           <input type="checkbox" name="concorrentes[]" value="Cielo">
-                         </label>
-                         <span>Cielo</span>
-                      </li>
-
-                      <li class="item item-checkbox">
-                         <label class="checkbox">
-                           <input type="checkbox" name="concorrentes[]" value="Santander Getnet">
-                         </label>
-                         <span>Santander Getnet</span>
-                      </li>
-
-                      <li class="item item-checkbox">
-                         <label class="checkbox">
-                           <input type="checkbox" name="concorrentes[]" value="Elavon">
-                         </label>
-                         <span>Elavon</span>
-                      </li>
-
-                      <li class="item item-checkbox">
-                         <label class="checkbox">
-                           <input type="checkbox" name="concorrentes[]" value="Global">
-                         </label>
-                         <span>Global</span>
-                      </li>
-                    </ul>
-                </div>
-
-				<div class="border-bottom">
-                    <div class="item item-toggle">
-                         Endereço
-                         <label class="toggle toggle-calm">
-                           <input type="checkbox" onclick="toggle('endereco')">
-                           <div class="track">
-                             <div class="handle"></div>
-                           </div>
-                         </label>
+                <div>
+                    <div id="concorrentes" class="item item-accordion" onclick="accordion('concorrentes')">
+                        <i class="icon ion-ios-arrow-right"></i>
+                        <h2>Concorrentes</h2>
                     </div>
                     
-                    <div id="endereco" class="padding hide">
+                    <div id="concorrentesContent" class="padding hide">
+                        <ul class="list">
+                          <li class="item item-checkbox">
+                             <label class="checkbox">
+                               <input type="checkbox" name="concorrentes[]" value="Visa">
+                             </label>
+                             <span>Visa</span>
+                          </li>
+
+                          <li class="item item-checkbox">
+                             <label class="checkbox">
+                               <input type="checkbox" name="concorrentes[]" value="Cielo">
+                             </label>
+                             <span>Cielo</span>
+                          </li>
+
+                          <li class="item item-checkbox">
+                             <label class="checkbox">
+                               <input type="checkbox" name="concorrentes[]" value="Santander Getnet">
+                             </label>
+                             <span>Santander Getnet</span>
+                          </li>
+
+                          <li class="item item-checkbox">
+                             <label class="checkbox">
+                               <input type="checkbox" name="concorrentes[]" value="Elavon">
+                             </label>
+                             <span>Elavon</span>
+                          </li>
+
+                          <li class="item item-checkbox">
+                             <label class="checkbox">
+                               <input type="checkbox" name="concorrentes[]" value="Global">
+                             </label>
+                             <span>Global</span>
+                          </li>
+                        </ul>
+                    </div>
+                </div>
+
+				<div>
+                    <div id="endereco" class="item item-accordion" onclick="accordion('endereco')">
+                        <i class="icon ion-ios-arrow-right"></i>
+                        <h2>Endereço</h2>
+                    </div>
+                    
+                    <div id="enderecoContent" class="padding hide">
                          <label class="item item-input item-stacked-label">
                             <span class="input-label">CEP</span>
                             <input id="cep" name="endereco[cep]" oninput="mask(this,Cep);" type="tel" placeholder="Digite o CEP">
