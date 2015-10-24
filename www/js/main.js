@@ -2,7 +2,7 @@ var user = null;
 
 var enterNextFocus = function(){
     
-    $("input[autofocus]:visible:enabled:eq(0)").focus();
+    //$("input[autofocus]:visible:enabled:eq(0)").focus();
     
     /* ao pressionar uma tecla em um campo que seja de class="pula" */
     $("input").keypress(function(e){
