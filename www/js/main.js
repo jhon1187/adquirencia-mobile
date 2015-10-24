@@ -62,8 +62,15 @@ var formValues = function(formId){
     return $("#"+formId).serializeObject();
 }
 
+var accordionReset = function(){
+    $(".item-accordion > .icon").removeClass("ion*").addClass("ion-ios-arrow-right");
+    $(".accordion-content").removeClass("hide").addClass("hide");
+}
+
 var formReset = function(formId){
     $("#"+formId)[0].reset();
+    
+    accordionReset();
 }
 
 var goTopPage = function(){

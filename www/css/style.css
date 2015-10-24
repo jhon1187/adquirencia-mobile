@@ -28,10 +28,15 @@
     font-weight: bold;
     margin: 15px 0px 15px 0px;
     cursor: pointer;
+    background-color: #607d8b !important;
 }
 
 .item-accordion{
     cursor: pointer;
+}
+
+.item-accordion h2{
+    color: #444 !important;
 }
 
 .error{
