@@ -81,10 +81,10 @@ var log = function(message, type){
     $("#log").removeClass();
     
     if(type != undefined){
-        $("#log").addClass(type);
+        $("#log .message").addClass(type);
     }
     
-    $("#log").html(message);
+    $("#log .message").html(message);
     
     $("#log").addClass("show");
     

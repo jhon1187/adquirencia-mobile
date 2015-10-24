@@ -23,12 +23,15 @@
 #log{
     text-align: center;
     font-size: 12px;
-    padding: 3px;
     color: #fff;
     font-weight: bold;
-    margin: 15px 0px 15px 0px;
     cursor: pointer;
+    padding: 10px 0px 10px 0px;
+}
+
+#log .message{
     background-color: #607d8b !important;
+    padding: 3px;
 }
 
 .item-accordion{
