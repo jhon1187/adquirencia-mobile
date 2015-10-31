@@ -19,15 +19,15 @@ var enterNextFocus = function(){
        /* verifica se a tecla pressionada foi o ENTER */
        if(tecla == 13){
            /* guarda o seletor do campo que foi pressionado Enter */
-           campo = $('input');
+           var campo = $('input');
            /* pega o indice do elemento*/
-           indice = campo.index(this);
+           var indice = campo.index(this);
            /*soma mais um ao indice e verifica se não é null
             *se não for é porque existe outro elemento
            */
-          if(campo[indice+1] != null){
+          if(campo[indice+1] !== null){
              /* adiciona mais 1 no valor do indice */
-             proximo = campo[indice + 1];
+             var proximo = campo[indice + 1];
              /* passa o foco para o proximo elemento */
              proximo.focus();
           }
@@ -37,7 +37,7 @@ var enterNextFocus = function(){
           return false;
        }
     });
-}
+};
 
 var focusInputEvent = function(){
     $("input[type=text],input[type=number],input[type=tel]").focusin(function() {
@@ -47,12 +47,12 @@ var focusInputEvent = function(){
     $("input[type=text],input[type=number],input[type=tel]").focusout(function() {
       $(".bar-footer").removeClass("hide");
     });
-}
+};
 
 var loadCallBack = function(){  
     enterNextFocus();
     $.getScript(pageJs);
-}
+};
 
 var loadPage = function(page){
     pageHtml = ("pages/"+page+".html");
@@ -60,31 +60,31 @@ var loadPage = function(page){
     pageCss = ("css/"+page+".css");
     
     $("#main").load(pageHtml, loadCallBack);
-}
+};
 
 var formValues = function(formId){
     return $("#"+formId).serializeObject();
-}
+};
 
 var accordionReset = function(){
     $(".item-accordion > .icon").removeClass("ion*").addClass("ion-ios-arrow-right");
     $(".accordion-content").removeClass("hide").addClass("hide");
-}
+};
 
 var formReset = function(formId){
     $("#"+formId)[0].reset();
     
     accordionReset();
-}
+};
 
 var goTopPage = function(){
     $("html, body").animate({ scrollTop: 0 }, "slow");
-}
+};
 
 var log = function(message, type){
     $("#log").removeClass();
     
-    if(type != undefined){
+    if(type !== undefined){
         $("#log .message").addClass(type);
     }
     
@@ -93,20 +93,20 @@ var log = function(message, type){
     $("#log").addClass("show");
     
     goTopPage();
-}
+};
 
 var logClear = function(){
     log("");
     $("#log").addClass("hide");
-}
+};
 
 var removeMarkValidate = function(){
     $("form span").css("color","#444");
-}
+};
 
 var markValidate = function(inputId){
     $("#"+inputId).parent().children("span").css("color","#f44336");
-}
+};
 
 var accordion = function(id){
     
@@ -121,7 +121,7 @@ var accordion = function(id){
     var idContent = id + "Content";
     
     hideShow(idContent);
-}
+};
 
 var hideShow = function(id){
     if($("#"+id).hasClass("hide")){
@@ -129,13 +129,13 @@ var hideShow = function(id){
     }else{
         $("#"+id).addClass("hide");
     }
-}
+};
          
-$( document ).ajaxStart(function() {
+$(document).ajaxStart(function() {
     $("#loading").removeClass("hide");
 });
 
-$( document ).ajaxComplete(function() {
+$(document).ajaxComplete(function() {
     $("#loading").addClass("hide");
 });
 
@@ -146,7 +146,7 @@ $(document).ready(function() {
         document.body.classList.add('keyboard-open');
     });
 
-    if(user == null){
+    if(user === null){
         loadPage(PAGE_LOGIN);
     }else{
         loadPage(PAGE_ADQUIRENCIA);

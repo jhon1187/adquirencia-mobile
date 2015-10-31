@@ -1,5 +1,8 @@
 /* Exemplo de uso: oninput="mask(this,Telefone);" */
 
+var v_obj = {};
+var v_fun = {};
+
 /*Função Pai de Mascaras*/
 function mask(o, f) {
 	v_obj = o;
@@ -12,18 +15,6 @@ function mask(o, f) {
 function execMask() {
 	v_obj.value = v_fun(v_obj.value);
 	return false;
-}
-
-/*Função que Determina as expressões regulares dos objetos*/
-function leech(v) {
-	v = v.replace(/o/gi, "0");
-	v = v.replace(/i/gi, "1");
-	v = v.replace(/z/gi, "2");
-	v = v.replace(/e/gi, "3");
-	v = v.replace(/a/gi, "4");
-	v = v.replace(/s/gi, "5");
-	v = v.replace(/t/gi, "7");
-	return v;
 }
 
 function Porcentagem100(v) {
@@ -130,9 +121,6 @@ function Cep(v) {
 
 /*Função que padroniza DATA*/
 function Data(v) {
-	/*if (v.substring(0, 4).indexOf("/") == -1) {
-	 v = v.substring(8, 10) + v.substring(5, 7) + v.substring(0, 4);
-	 }*/
 	v = v.replace(/\D/g, "");
 	v = v.replace(/(\d{2})(\d)/, "$1/$2");
 	v = v.replace(/(\d{2})(\d)/, "$1/$2");
@@ -165,13 +153,13 @@ function Valor(v) {
 	v = v.replace(/\D/g, "");
 	v = RemoveZeroEsquerda(v);
 	//Remove tudo o que não é dígito
-	v = v.replace(/(\d{1})(\d{20})$/, "$1.$2")
-	v = v.replace(/(\d{1})(\d{17})$/, "$1.$2")
-	v = v.replace(/(\d{1})(\d{14})$/, "$1.$2")
-	v = v.replace(/(\d{1})(\d{11})$/, "$1.$2")
-	v = v.replace(/(\d{1})(\d{8})$/, "$1.$2")
-	v = v.replace(/(\d{1})(\d{5})$/, "$1.$2")
-	v = v.replace(/(\d{1})(\d{1,2})$/, "$1,$2")
+	v = v.replace(/(\d{1})(\d{20})$/, "$1.$2");
+	v = v.replace(/(\d{1})(\d{17})$/, "$1.$2");
+	v = v.replace(/(\d{1})(\d{14})$/, "$1.$2");
+	v = v.replace(/(\d{1})(\d{11})$/, "$1.$2");
+	v = v.replace(/(\d{1})(\d{8})$/, "$1.$2");
+	v = v.replace(/(\d{1})(\d{5})$/, "$1.$2");
+	v = v.replace(/(\d{1})(\d{1,2})$/, "$1,$2");
 
 	return v;
 }

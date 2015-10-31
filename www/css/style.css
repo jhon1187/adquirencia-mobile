@@ -1,5 +1,11 @@
-@-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }  @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
-@-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }           @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+html{
+    overflow: auto;
+}
+
+.content{
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+}
 
 #loading {
 	position: fixed;

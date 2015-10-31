@@ -10,7 +10,7 @@ adquirencia.enviar = function(){
     
     var validMessage = adquirencia.validar();
     
-    if(validMessage != null && validMessage != ""){
+    if(validMessage !== undefined){
         log(validMessage, "error");
         return;
     }
@@ -27,29 +27,30 @@ adquirencia.enviar = function(){
             "user": user
         },
         success: function() {
+            
+            alert("sucess");
+            
             formReset(adquirencia.formId);
             
             log("Enviado com sucesso!", "success");
         },
         error: function(response) {
-            
             if(response.status == 401){
                 login.logout("Sem autorização, efetue login no sistema!", "error");
             }else{
                 log("Erro ao enviar, tente novamente!", "error");
             }
-        
         }
       });
-}
+};
 
 adquirencia.validar = function(){    
-    if(adquirencia.entity.nomeEstabelecimento == null || adquirencia.entity.nomeEstabelecimento == ""){
+    if(adquirencia.entity.nomeEstabelecimento === null || adquirencia.entity.nomeEstabelecimento === ""){
          markValidate("nome");
          return "O campo Nome deve ser preenchido!";
     }
      
-    if(adquirencia.entity.telefone == null || adquirencia.entity.telefone == ""){
+    if(adquirencia.entity.telefone === null || adquirencia.entity.telefone === ""){
          markValidate("telefone");
          return "O campo Telefone deve ser preenchido!";
     }
@@ -59,15 +60,15 @@ adquirencia.validar = function(){
         return "O campo Telefone deve ser preenchido corretamente!";
     }
      
-    if(adquirencia.entity.nomeResponsavel == null || adquirencia.entity.nomeResponsavel == ""){
+    if(adquirencia.entity.nomeResponsavel === null || adquirencia.entity.nomeResponsavel === ""){
          markValidate("responsavel");
          return "O campo Responsável deve ser preenchido!";
     }
     
-    if(adquirencia.entity.endereco["cep"] != null && adquirencia.entity.endereco["cep"] != ""){
-        if(adquirencia.entity.endereco["cep"].length < 10){
+    if(adquirencia.entity.endereco.cep !== null && adquirencia.entity.endereco.cep !== ""){
+        if(adquirencia.entity.endereco.cep.length < 10){
             markValidate("cep");
             return "O campo CEP deve ser preenchido corretamente!";
         }
     }
-}
+};
