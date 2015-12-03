@@ -26,9 +26,6 @@ adquirencia.enviar = function(){
             "user": user
         },
         success: function() {
-            
-            alert("sucess");
-            
             formReset(adquirencia.formId);
             
             log("Enviado com sucesso!", "success");
