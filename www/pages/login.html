@@ -6,22 +6,24 @@
     
     <div id="log" class="hide" onclick="hideShow('log')"><div class="message"></div></div>
 
-	<form id="formLogin">
-		<div class="list">
-			<label class="item item-input item-stacked-label">
-				<span class="input-label">* Login</span>
-				<input id="login" name="login" type="text" placeholder="Digite o login" autofocus>
-			</label>
+    <form id="formLogin">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="login" name="login" type="text">
+                <label for="login">* Login</label>
+            </div>
+        </div>    
 
-			<label class="item item-input item-stacked-label">
-				<span class="input-label">* Senha</span>
-				<input id="pass" name="pass" type="password" placeholder="Digite a senha">
-			</label>
-		</div>
-	</form>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="pass" name="pass" type="password">
+                <label for="pass">* Senha</label>
+            </div>
+        </div>
+    </form>
 
-	<div class="padding btnEntrar">
-		<button class="button button-block button-balanced" onclick="login.enviar()" id="btn_login">ENTRAR</button>
+	<div class="btnEntrar">
+		<button class="btn button-block button-balanced waves-effect waves-light" onclick="login.enviar()" id="btn_login">ENTRAR</button>
 	</div>
 
 </div>

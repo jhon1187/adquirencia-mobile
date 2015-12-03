@@ -3,7 +3,6 @@ adquirencia.formId = "formEstabelecimento";
 adquirencia.entity = {};
 
 adquirencia.enviar = function(){
-    logClear();
     removeMarkValidate();
 
     adquirencia.entity = formValues(adquirencia.formId);

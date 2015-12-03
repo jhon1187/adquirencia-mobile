@@ -2,7 +2,7 @@
 
 	<div class="bar bar-header bar-tend">
 		<h1 class="title">Estabelecimento</h1>
-        <button class="button button-icon icon ion-android-more-vertical" onclick="login.logout()"></button>
+        <button class="button button-icon icon ion-android-more-vertical waves-effect waves-light" onclick="login.logout()"></button>
 	</div>
 	    
 	<div class="content has-header has-footer">
@@ -10,21 +10,27 @@
         <div id="log" class="hide" onclick="hideShow('log')"><div class="message"></div></div>
         
 		<form id="formEstabelecimento">
-			<div class="list">
-				<label class="item item-input item-stacked-label">
-				    <span class="input-label">* Nome</span>
-				    <input id="nome" name="nomeEstabelecimento" type="text" placeholder="Digite o nome" autofocus>
-				</label>
 
-				<label class="item item-input item-stacked-label">
-				    <span class="input-label">* Telefone</span>
-				    <input id="telefone" name="telefone" type="tel" oninput="mask(this,Telefone);" placeholder="Digite o telefone">
-				</label>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="nome" name="nomeEstabelecimento" type="text" placeholder="Digite o nome">
+                        <label class="active" for="nome">* Nome</label>
+                    </div>
+                </div>
 
-				<label class="item item-input item-stacked-label">
-				    <span class="input-label">* Responsável</span>
-				    <input id="responsavel" name="nomeResponsavel" type="text" placeholder="Digite o responsável">
-				</label>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="telefone" name="telefone" type="tel" oninput="mask(this,Telefone);" placeholder="Digite o telefone">
+                        <label class="active" for="telefone">* Telefone</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="responsavel" name="nomeResponsavel" type="text" placeholder="Digite o responsável">
+                        <label class="active" for="responsavel">* Responsável</label>
+                    </div>
+                </div>   
 
                 <div>
                     <div id="concorrentes" class="item item-accordion" onclick="accordion('concorrentes')">
@@ -33,42 +39,40 @@
                     </div>
                     
                     <div id="concorrentesContent" class="accordion-content padding hide">
-                        <ul class="list">
-                          <li class="item item-checkbox">
-                             <label class="checkbox">
-                               <input type="checkbox" name="concorrentes[]" value="Visa">
-                             </label>
-                             <span>Visa</span>
-                          </li>
+                        <div class="row">
+                            <div class="input-field col s12">
+                          <input type="checkbox" class="filled-in" id="visa" name="concorrentes[]" value="Visa" />
+                          <label for="visa">Visa</label>
+                          </div>
+                        </div>
 
-                          <li class="item item-checkbox">
-                             <label class="checkbox">
-                               <input type="checkbox" name="concorrentes[]" value="Cielo">
-                             </label>
-                             <span>Cielo</span>
-                          </li>
+                        <div class="row">
+                            <div class="input-field col s12">
+                          <input type="checkbox" class="filled-in" id="cielo" name="concorrentes[]" value="Cielo" />
+                          <label for="cielo">Cielo</label>
+                          </div>
+                        </div>
 
-                          <li class="item item-checkbox">
-                             <label class="checkbox">
-                               <input type="checkbox" name="concorrentes[]" value="Santander Getnet">
-                             </label>
-                             <span>Santander Getnet</span>
-                          </li>
+                        <div class="row">
+                            <div class="input-field col s12">
+                          <input type="checkbox" class="filled-in" id="santander" name="concorrentes[]" value="Santander Getnet" />
+                          <label for="santander">Santander Getnet</label>
+                          </div>
+                        </div>
 
-                          <li class="item item-checkbox">
-                             <label class="checkbox">
-                               <input type="checkbox" name="concorrentes[]" value="Elavon">
-                             </label>
-                             <span>Elavon</span>
-                          </li>
+                        <div class="row">
+                            <div class="input-field col s12">
+                          <input type="checkbox" class="filled-in" id="elavon" name="concorrentes[]" value="Elavon" />
+                          <label for="elavon">Elavon</label>
+                          </div>
+                        </div>
 
-                          <li class="item item-checkbox">
-                             <label class="checkbox">
-                               <input type="checkbox" name="concorrentes[]" value="Global">
-                             </label>
-                             <span>Global</span>
-                          </li>
-                        </ul>
+                        <div class="row">
+                            <div class="input-field col s12">
+                          <input type="checkbox" class="filled-in" id="global" name="concorrentes[]" value="Global" />
+                          <label for="global">Global</label>
+                          </div>
+                        </div>
                     </div>
                 </div>
 
@@ -79,50 +83,60 @@
                     </div>
                     
                     <div id="enderecoContent" class="accordion-content padding hide">
-                         <label class="item item-input item-stacked-label">
-                            <span class="input-label">CEP</span>
-                            <input id="cep" name="endereco[cep]" oninput="mask(this,Cep);" type="tel" placeholder="Digite o CEP">
-                        </label>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="cep" name="endereco[cep]" oninput="mask(this,Cep);" type="tel" placeholder="Digite o CEP">
+                                <label class="active" for="cep">CEP</label>
+                            </div>
+                        </div>
 
-                         <label class="item item-input item-stacked-label">
-                            <span class="input-label">Rua</span>
-                            <input id="rua" name="endereco[rua]" type="text" placeholder="Digite a rua">
-                        </label>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="rua" name="endereco[rua]" type="text" placeholder="Digite a rua">
+                                <label class="active" for="rua">Rua</label>
+                            </div>
+                        </div>
 
-                         <label class="item item-input item-stacked-label">
-                            <span class="input-label">Número</span>
-                            <input id="numero" name="endereco[numero]" type="number" oninput="mask(this,Integer);" placeholder="Digite o número">
-                        </label>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="numero" name="endereco[numero]" type="number" oninput="mask(this,Integer);" placeholder="Digite o número">
+                                <label class="active" for="numero">Número</label>
+                            </div>
+                        </div>
 
-                         <label class="item item-input item-stacked-label">
-                            <span class="input-label">Complemento</span>
-                            <input id="complemento" name="endereco[complemento]" type="text" placeholder="Digite o complemento">
-                        </label>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="complemento" name="endereco[complemento]" type="text" placeholder="Digite o complemento">
+                                <label class="active" for="complemento">Complemento</label>
+                            </div>
+                        </div>
 
-                         <label class="item item-input item-stacked-label">
-                            <span class="input-label">Bairro</span>
-                            <input id="bairro" name="endereco[bairro]" type="text" placeholder="Digite o bairro">
-                        </label>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="bairro" name="endereco[bairro]" type="text" placeholder="Digite o bairro">
+                                <label class="active" for="bairro">Bairro</label>
+                            </div>
+                        </div>
 
-                         <label class="item item-input item-stacked-label">
-                            <span class="input-label">Cidade</span>
-                            <input id="cidade" name="endereco[cidade]" type="text" placeholder="Digite a cidade">
-                        </label>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="cidade" name="endereco[cidade]" type="text" placeholder="Digite o cidade">
+                                <label class="active" for="cidade">Cidade</label>
+                            </div>
+                        </div>
 
-                         <label class="item item-input item-stacked-label">
-                            <span class="input-label">UF</span>
-                            <input id="uf" name="endereco[uf]" type="text" placeholder="Digite a UF">
-                        </label>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="uf" name="endereco[uf]" type="text" placeholder="Digite o UF">
+                                <label class="active" for="uf">UF</label>
+                            </div>
+                        </div>
                     </div>
-				</div>
-                
-			</div>
+			    </div>
 		</form>
 	</div>
     
     <div class="bar bar-footer bar-balanced hide-on-keyboard-open">
-        <div class="title pointer" onclick="adquirencia.enviar()">Enviar</div>
+        <div class="title pointer waves-effect waves-light" onclick="adquirencia.enviar()">Enviar</div>
     </div>
 </div>
-
-   

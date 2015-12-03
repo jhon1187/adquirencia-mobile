@@ -77,35 +77,19 @@ var formReset = function(formId){
     accordionReset();
 };
 
-var goTopPage = function(){
-    $("html, body").animate({ scrollTop: 0 }, "slow");
-};
-
 var log = function(message, type){
-    $("#log").removeClass();
     
-    if(type !== undefined){
-        $("#log .message").addClass(type);
-    }
-    
-    $("#log .message").html(message);
-    
-    $("#log").addClass("show");
-    
-    goTopPage();
-};
-
-var logClear = function(){
-    log("");
-    $("#log").addClass("hide");
 };
 
 var removeMarkValidate = function(){
-    $("form span").css("color","#444");
+    $("form label").css("color","#444");
+    $("input").removeClass("invalid");
 };
 
 var markValidate = function(inputId){
-    $("#"+inputId).parent().children("span").css("color","#f44336");
+    $("#"+inputId).parent().children("label").css("color","#f44336");
+    $("#"+inputId).addClass("invalid");
+    $("#"+inputId).focus();
 };
 
 var accordion = function(id){
@@ -140,8 +124,6 @@ $(document).ajaxComplete(function() {
 });
 
 $(document).ready(function() {
-    logClear();
-    
     window.addEventListener('native.keyboardshow', function(){
         document.body.classList.add('keyboard-open');
     });

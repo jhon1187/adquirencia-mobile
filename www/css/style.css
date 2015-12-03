@@ -143,10 +143,16 @@ html{
     border-color: #8bc34a !important;
 }
 
+.input-field label.active{
+    font-size: 1rem !important;
+}
+
 /*-------------------------------LOGIN--------------------------------*/
 
 .login-content .btnEntrar{
     margin-top: 50px;
+    margin-bottom: 10px;
+    padding: 0px 25%;
 }
 
 .login-content .imgLogo img{
@@ -155,4 +161,14 @@ html{
 
 .imgLogo{
     border: none;
+}
+
+.login-content form{
+    margin-top: 30px;
+}
+
+/*---------------------------Adquirencia----------------------------*/
+#formEstabelecimento{
+    margin-top: 25px;
+    margin-bottom: 1px;
 }

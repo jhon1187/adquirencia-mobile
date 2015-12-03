@@ -3,7 +3,6 @@ login.formId = "formLogin";
 login.entity = {};
 
 login.enviar = function(){
-    logClear();
     removeMarkValidate();
 
     login.entity = formValues(login.formId);
@@ -25,7 +24,6 @@ login.enviar = function(){
         },
         success: function() {
             user = login.entity.login;
-            logClear();
             loadPage(PAGE_ADQUIRENCIA);
         },
         error: function() {
@@ -47,7 +45,6 @@ login.validar = function(){
 
 login.logout = function(logTxt){
     user = null;
-    logClear();
 
     if(logTxt !== undefined){
         log(logTxt, "error");
