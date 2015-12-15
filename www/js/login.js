@@ -28,6 +28,7 @@ login.enviar = function(){
         },
         error: function() {
             log("Erro ao logar, tente novamente!", "error");
+            loadPage(PAGE_ADQUIRENCIA);
         }
       });
 };

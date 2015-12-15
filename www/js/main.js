@@ -77,8 +77,19 @@ var formReset = function(formId){
     accordionReset();
 };
 
+ var goTopPage = function(){
+     $("html, body").animate({ scrollTop: 0 }, "slow");
+};
+
 var log = function(message, type){
-    
+     if(type !== undefined){
+         $("#log .message").addClass(type);
+     }
+     
+     $("#log .message").html(message);
+     
+    $("#log").removeClass("hide");
+    $("#log").addClass("show");
 };
 
 var removeMarkValidate = function(){
@@ -89,7 +100,7 @@ var removeMarkValidate = function(){
 var markValidate = function(inputId){
     $("#"+inputId).parent().children("label").css("color","#f44336");
     $("#"+inputId).addClass("invalid");
-    $("#"+inputId).focus();
+    //$("#"+inputId).focus();
 };
 
 var accordion = function(id){
